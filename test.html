@@ -1,0 +1,33 @@
+<html>
+	<head>
+		<title>Testable Todos Test Page</title>
+
+		<!-- basic -->
+		<script src="bower_components/jquery/dist/jquery.js"></script>
+		<script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+		<link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.css">
+
+		<script src="app/todo-item.view.js"></script>
+		<script src="app/todo-list.view.js"></script>
+	</head>
+	<body>
+		<div id="mocha"></div>
+
+		<!-- import mocha and chai -->
+		<link rel="stylesheet" type="text/css" href="bower_components/mocha/mocha.css">
+		<script src="bower_components/mocha/mocha.js"></script>
+		<script src="bower_components/chai/chai.js"></script>
+
+		<script>mocha.setup('bdd')</script>
+
+		<!-- test files -->
+		<script src="test/todo-item.view.js"></script>
+		<script src="test/todo-list.view.js"></script>
+		<script>
+		mocha.checkLeaks();
+		mocha.globals(['jQuery']);
+		mocha.run();
+		</script>
+
+	</body>
+</html>

@@ -1,0 +1,15 @@
+{
+  "name": "testable-todos",
+  "version": "0.1.0",
+  "scripts": {
+  	"start": "lite-server"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "bower": "^1.7.9",
+    "gulp": "^3.9.1"
+  },
+  "devDependencies": {
+    "lite-server": "^2.2.0"
+  }
+}

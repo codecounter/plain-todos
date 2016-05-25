@@ -1,0 +1,13 @@
+{
+  "name": "testable-todos",
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "homepage": "https://github.com/codecounter/testable-todos",
+  "moduleType": [],
+  "dependencies": {
+    "mocha": "^2.5.3",
+    "bootstrap": "^3.3.6",
+    "chai": "^3.5.0"
+  }
+}
