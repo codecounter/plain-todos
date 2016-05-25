@@ -11,7 +11,7 @@ Inspired by two posts about write testable javascript code.
 
 # how to run it
 
-- first clone this project, `git clone https://github.com/codecounter/plain-todos`
+- first clone this project, `git clone https://github.com/codecounter/testable-todos`
 
 # License
 
