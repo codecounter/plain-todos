@@ -3,6 +3,7 @@
 		<title>Testable Todos</title>
 		<script src="bower_components/jquery/dist/jquery.js"></script>
 		<script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+		<script src="bower_components/underscore/underscore.js"></script>
 		<link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.css">
 
 		<script src="app/app.js"></script>
@@ -13,11 +14,16 @@
 		<script src="app/todo-list.view.js"></script>
 	</head>
 	<body>
-		<div id="app"></div>
+		<div id="app">
+			<form id="add-form"></form>
+			<ul id="todo-list"></ul>
+		</div>
 		<script>
 		$(function() {
 			var app = new App(
-				$('#app')
+				$('#app'),
+				new TodoListView($('#todo-list')),
+				new AddFormView($('#add-form'))
 			);
 			app.init();
 		});

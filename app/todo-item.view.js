@@ -1,29 +1,26 @@
 /**
  * todo item view
  */
-;(function(global) {
+class TodoItemView {
 
-	var TodoItemView = function(dom) {
-		// a li jquery object
+	constructor(dom) {
 		this.dom = dom;
+		this.init();
 	}
 
-	TodoItemView.prototype.init = function() {
+	init() {
 		this.dom.html('<input type="checkbox"/><span class="text"></span>');
 	}
 
-	TodoItemView.prototype.setId = function(id) {
+	setId(id) {
 		this.dom.attr('todo-item-id', id);
 	}
 
-	TodoItemView.prototype.setText = function(text) {
+	setText(text) {
 		this.dom.find('span').text(text);
 	}
 
-	TodoItemView.prototype.setChecked = function(checked) {
+	setChecked(checked) {
 		this.dom.find(':checkbox').attr('checked', checked);
 	}
-
-	global.TodoItemView = TodoItemView;
-
-})(this);
+}

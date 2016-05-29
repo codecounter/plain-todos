@@ -1,41 +1,41 @@
 /**
  * add new todo form
  */
-;(function(global) {
+class AddFormView {
 
-	var AddFormView = function(dom) {
-		// a form jquery object
+	constructor(dom) {
 		this.dom = dom;
+		this.init();
 	}
 
-	AddFormView.prototype.init = function() {
-		var self = this;
+	init() {
 		this.dom.attr('onsubmit', 'return false').html('<input type="text"/><button>add</button>');
-		this.dom.find('button').on('click', function() {
-			var text = self.getText();
-			self.dom.trigger('submited', [text]);
-		});
+		this.dom.find('button').on('click', _.bind(function() {
+			var text = this.getText();
+			this.dom.trigger('submited', [text]);
+		}, this));
 	}
 
-	AddFormView.prototype.onSubmited = function(callback) {
+	on(eventType, callback) {
+		this.dom.on(eventType, callback);
+	}
+
+	onSubmited(callback) {
 		var self = this;
 		this.dom.on('submited', function(e, text) {
 			callback.call(self, text);
 		});
 	}
 
-	AddFormView.prototype.getText = function() {
+	getText() {
 		return this.dom.find('input').val();
 	}
 
-	AddFormView.prototype.setText = function(text) {
+	setText(text) {
 		this.dom.find('input').val(text);
 	}
 
-	AddFormView.prototype.clear = function() {
+	clear() {
 		this.setText('');
 	}
-
-	global.AddFormView = AddFormView;
-
-})(this);
+}

@@ -3,12 +3,6 @@
  *
  * that's a list of TodoItemModel
  */
-;(function(global) {
+class TodoListModel {
 
-	var TodoListModel = function() {
-		
-	}
-
-	global.TodoListModel = TodoListModel;
-
-})(this);
+}

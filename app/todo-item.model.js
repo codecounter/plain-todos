@@ -3,14 +3,12 @@
  *
  * that's a todo item
  */
-;(function(global) {
+class TodoItemModel {
 
-	var TodoItemModel = function(id, text, checked) {
-		this.id = id || 0;
-		this.text = text || '';
-		this.checked = checked || false;
+	constructor(id, text, checked) {
+		this.id = id;
+		this.text = text;
+		this.checked = checked;
 	}
 
-	global.TodoItemModel = TodoItemModel;
-
-})(this);
+}

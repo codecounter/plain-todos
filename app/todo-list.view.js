@@ -1,17 +1,15 @@
 /**
  * todo list view
  */
-;(function(global) {
+class TodoListView {
 
-	var TodoListView = function(dom) {
-		// a ul jquery object
+	// ul
+	constructor(dom) {
 		this.dom = dom;
 	}
 
-	TodoListView.prototype.init = function() {
-		
+	prepend(todoItemView) {
+		this.dom.prepend(todoItemView.dom);
 	}
 
-	global.TodoListView = TodoListView;
-
-})(this);
+}

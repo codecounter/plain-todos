@@ -1,31 +1,34 @@
 /**
  * this is application entrence.
  */
-;(function(global) {
+class App {
 
-	var App = function(dom, listView) {
+	constructor(dom, listView, addFormView) {
 		this.dom = dom;
+		this.listView = listView;
+		this.addFormView = addFormView;
 	}
 
-	App.prototype.init = function() {
-		var self = this;
-
-		this.dom.html('<form></form><ul></ul>');
-		this.todoListView = new TodoListView(this.dom.find('ul'));
-		this.todoListView.init();
-		this.addFormView = new AddFormView(this.dom.find('form'));
-		this.addFormView.init();
-
-		this.addFormView.onSubmited(function(text) {
-			if (text) {
-				this.clear();
-				alert('will add: ' + text);
-			} else {
-				alert('text cannot be empty');
-			}
-		});
+	init() {
+		this.addFormView.onSubmited(_.bind(this.prependByText, this));
 	}
 
-	global.App = App;
+	prependByText(text) {
 
-})(this);
+		if (text) {
+			console.log('prepend by text ', text);
+			// create todo item
+			var item = new TodoItemModel(1, text, false);
+			var todoItemView = new TodoItemView($('<li></li>'));
+			todoItemView.setId(item.id);
+			todoItemView.setText(item.text);
+			todoItemView.setChecked(item.checked);
+			this.listView.prepend(todoItemView);
+
+			this.addFormView.clear();
+		} else {
+			alert('text is empty');
+		}
+	}
+
+}
