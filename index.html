@@ -6,12 +6,11 @@
 		<script src="bower_components/underscore/underscore.js"></script>
 		<link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.css">
 
-		<script src="app/app.js"></script>
-		<script src="app/add-form.view.js"></script>
-		<script src="app/todo-item.model.js"></script>
-		<script src="app/todo-item.view.js"></script>
-		<script src="app/todo-list.model.js"></script>
-		<script src="app/todo-list.view.js"></script>
+		<script src="app/app.comp.js"></script>
+		<script src="app/add-form.comp.js"></script>
+		<script src="app/todo-list.comp.js"></script>
+		<script src="app/todo-service.js"></script>
+		<script src="app/todo.js"></script>
 	</head>
 	<body>
 		<div id="app">
@@ -20,12 +19,14 @@
 		</div>
 		<script>
 		$(function() {
-			var app = new App(
-				$('#app'),
-				new TodoListView($('#todo-list')),
-				new AddFormView($('#add-form'))
-			);
-			app.init();
+			// var app = new App(
+			// 	$('#app'),
+			// 	new TodoListView($('#todo-list')),
+			// 	new AddFormView($('#add-form'))
+			// );
+			// app.init();
+
+			var appComp = new AppComp($('#app'));
 		});
 		</script>
 	</body>
